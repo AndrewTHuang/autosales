@@ -31,11 +31,11 @@ if (isDevelopment) {
   });
 } else {
   app.use(express.static(static_path))
-    .get('/', function(req, res) {
-      res.sendFile('index.html', {
-        root: static_path;
-      });
-    }).listen(process.env.PORT || 8080, function(err) {
+    .get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'index.html'));
+  });
+
+  app.listen(process.env.PORT || 8080, function(err) {
       if (err) {
         console.log(err);
         return;
