@@ -31,6 +31,7 @@ if (isDevelopment) {
   });
 } else {
   app.use(express.static(static_path));
+  app.use(express.static(path.join(static_path, 'assets'));
 
   app.get('*', function(req, res) {
     res.sendFile('index.html', {
