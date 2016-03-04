@@ -1,0 +1,78 @@
+@import '../base/colors';
+
+.search-container {
+  height: auto;
+  padding: 0 10% 0 10%;
+}
+
+.dropdown {
+  display: inline-block;
+  margin: 25px;
+}
+
+.dropdown-content {
+  transition: 0.3s ease-out;
+  display: none;
+  position: absolute;
+  width: 280px;
+  z-index: 100;
+
+  a {
+    display: block;
+    text-decoration: none;
+    padding: 6px 16px;
+    background-color: white;
+    color: $gray-dropdown;
+    border: 1px solid $gray-dropdown;
+    font-size: 14px;
+
+    &:hover {
+      background-color: $light-gray;
+      color: $gray;
+    }
+  }
+}
+
+.active {
+  @extends .dropdown-content;
+  display: block;
+}
+
+.dropdown-menu {
+  background-color: white;
+  position: relative;
+  border: 2px solid $gray-dropdown;
+  height: 45px;
+  width: 280px;
+  text-align: left;
+  color: $gray-dropdown;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.3s ease-out;
+
+  &:hover {
+    border: 2px solid $gray;
+    color: $gray;
+    transition: 0.3s ease-out;
+  }
+}
+
+// In practice, I would show the dropdown menu on click and not hover. Please see Andrew_Huang_Debriefing.pdf for more.
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.search-button {
+  background-color: $orange;
+  width: 280px;
+  height: 45px;
+  font-size: 16px;
+  transition: 0.3s ease-out;
+  margin-left: 25px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $orange-hover;
+    transition: 0.3s ease-out;
+  }
+}
