@@ -30,8 +30,8 @@ if (isDevelopment) {
     console.log('Listening at http://localhost:3001');
   });
 } else {
-  app.use(express.static(static_path));
-  app.use(express.static(path.join(static_path, 'assets'));
+  process.env.PWD = process.cwd();
+  app.use(express.static(process.env.PWD + '/public'));
 
   app.get('*', function(req, res) {
     res.sendFile('index.html', {
