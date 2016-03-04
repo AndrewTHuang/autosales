@@ -2,12 +2,13 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
+  devtool: 'eval',
   entry: [
     'webpack-hot-middleware/client',
     './src/index.js'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
     publicPath: '/'
   },
