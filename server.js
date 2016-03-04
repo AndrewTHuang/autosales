@@ -18,9 +18,7 @@ if (isDevelopment) {
   app.use(require('webpack-hot-middleware')(compiler));
 
   app.get('*', function(req, res) {
-    res.sendFile('index.html', {
-      root: static_path
-    });
+    res.sendFile(path.join(__dirname, 'index.html'));
   });
 
   app.listen(3001, 'localhost', function(err) {
