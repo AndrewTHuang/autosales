@@ -27,7 +27,7 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|svg)$/,
         loaders: ['url?limit=8192'],
-        include: path.join(__dirname, 'src/assets')
+        include: path.join(__dirname, 'public/assets')
       }
     ]
   }

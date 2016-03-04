@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/components/Header.scss';
-import searchIcon from '../assets/icon-search-white.svg';
-import logo from '../assets/logo-autosales.svg';
+import searchIcon from '../../public/assets/icon-search-white.svg';
+import logo from '../../public/assets/logo-autosales.svg';
 
 export default class Header extends React.Component {
   render() {

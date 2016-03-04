@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles/components/Hero.scss';
-import heroImage from '../assets/hero-image.jpg';
+import heroImage from '../../public/assets/hero-image.jpg';
 import Button from './Button';
 
 export default class Hero extends React.Component {

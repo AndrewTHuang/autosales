@@ -2,14 +2,14 @@ import React from 'react';
 import styles from '../styles/components/Content.scss';
 import Button from './Button';
 
-import hondaCivic from '../assets/honda-civic.png';
-import hondaCrv from '../assets/honda-crv.png';
-import audiRs6 from '../assets/audi-rs6.png';
-import audiQ7 from '../assets/audi-q7.png';
-import chevyCamaro from '../assets/chevy-camaro.png';
-import chevyEscape from '../assets/chevy-escape.png';
-import fordShelby from '../assets/ford-shelby.png';
-import fordF150 from '../assets/ford-f150.png';
+import hondaCivic from '../../public/assets/honda-civic.png';
+import hondaCrv from '../../public/assets/honda-crv.png';
+import audiRs6 from '../../public/assets/audi-rs6.png';
+import audiQ7 from '../../public/assets/audi-q7.png';
+import chevyCamaro from '../../public/assets/chevy-camaro.png';
+import chevyEscape from '../../public/assets/chevy-escape.png';
+import fordShelby from '../../public/assets/ford-shelby.png';
+import fordF150 from '../../public/assets/ford-f150.png';
 
 export default class Content extends React.Component {
   render() {

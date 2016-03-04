@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../styles/components/Footer.scss';
-import searchIcon from '../assets/icon-search-white.svg';
-import logo from '../assets/logo-autosales.svg';
+import searchIcon from '../../public/assets/icon-search-white.svg';
+import logo from '../../public/assets/logo-autosales.svg';
 
 export default class Footer extends React.Component {
   render() {
