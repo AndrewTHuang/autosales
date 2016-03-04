@@ -30,8 +30,9 @@ if (isDevelopment) {
     console.log('Listening at http://localhost:3001');
   });
 } else {
-  app.use(express.static(static_path))
-    .get('*', function(req, res) {
+  app.use(express.static(__dirname));
+
+  app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
   });
 
