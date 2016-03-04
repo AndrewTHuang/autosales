@@ -5,17 +5,20 @@ module.exports = {
   devtool: 'eval',
   entry: [
     'webpack-hot-middleware/client',
-    './src/index.js'
+    './src/index'
   ],
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/public/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   module: {
     loaders: [
       {

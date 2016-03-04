@@ -32,7 +32,7 @@ if (isDevelopment) {
     console.log('Listening at http://localhost:3001');
   });
 } else {
-  app.use(express.static(__dirname));
+  app.use(express.static(static_path));
 
   app.get('*', function(req, res) {
     res.sendFile('index.html', {
