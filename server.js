@@ -6,22 +6,40 @@ var config = require('./webpack.config');
 var app = express();
 var compiler = webpack(config);
 
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
+var isDevelopment = (process.env.NODE_ENV !== 'production');
 
-app.use(require('webpack-hot-middleware')(compiler));
+if (isDevelopment) {
+  app.use(require('webpack-dev-middleware')(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+  }));
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+  app.use(require('webpack-hot-middleware')(compiler));
 
-app.listen(3001, 'localhost', function(err) {
-  if (err) {
-    console.log(err);
-    return;
-  }
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'index.html'));
+  });
 
-  console.log('Listening at http://localhost:3001');
-});
+  app.listen(3001, 'localhost', function(err) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    console.log('Listening at http://localhost:3001');
+  });
+} else {
+  app.use(express.static(__dirname))
+    .get('/', function(req, res) {
+      res.sendFile('index.html', {
+        root: __dirname
+      });
+    }).listen(process.env.PORT || 8080, function(err) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+
+      console.log('Listening at http://localhost:8080'));
+    });
+};
