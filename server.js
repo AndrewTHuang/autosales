@@ -7,6 +7,7 @@ var app = express();
 var compiler = webpack(config);
 
 var isDevelopment = (process.env.NODE_ENV !== 'production');
+var static_path = path.join(__dirname, 'public');
 
 if (isDevelopment) {
   app.use(require('webpack-dev-middleware')(compiler, {
@@ -29,10 +30,10 @@ if (isDevelopment) {
     console.log('Listening at http://localhost:3001');
   });
 } else {
-  app.use(express.static(__dirname))
+  app.use(express.static(static_path))
     .get('/', function(req, res) {
       res.sendFile('index.html', {
-        root: path.join(__dirname, 'public');
+        root: static_path;
       });
     }).listen(process.env.PORT || 8080, function(err) {
       if (err) {
